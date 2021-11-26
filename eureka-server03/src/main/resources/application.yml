@@ -1,0 +1,13 @@
+server:
+  port: 18183
+eureka:
+  instance:
+    hostname: HJNAPP03
+  client:
+    register-with-eureka: true  #集群时需要强制手动指定，fetch-registry、register-with-eureka都需要设置为true
+    fetch-registry: true        #集群时需要强制手动指定，fetch-registry、register-with-eureka都需要设置为true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: hjntest
