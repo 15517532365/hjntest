@@ -1,8 +1,8 @@
 server:
-  port: 18181
-  port1: 18182
-  port2: 18183
-  port3: 18184
+  port: 18180
+  port1: 18181
+  port2: 18182
+  port3: 18183
 
 eureka:
   instance:
