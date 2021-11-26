@@ -1,14 +1,22 @@
 server:
   port: 18181
+  port1: 18182
+  port2: 18183
+  port3: 18184
+
 eureka:
   instance:
     hostname: HJNAPP01
-    prefer-ip-address: true
+    hostname1: HJNAPP02
+    hostname2: HJNAPP03
+    hostname3: HJNAPP04
+    prefer-ip-address: false
   client:
-    register-with-eureka: false  #集群时需要强制手动指定，fetch-registry、register-with-eureka都需要设置为true
-    fetch-registry: false        #集群时需要强制手动指定，fetch-registry、register-with-eureka都需要设置为true
+    register-with-eureka: false
+    fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/,http://${eureka.instance.hostname1}:${server.port1}/eureka/,http://${eureka.instance.hostname2}:${server.port2}/eureka/,http://${eureka.instance.hostname3}:${server.port3}/eureka/
+
 spring:
   application:
     name: hjntest
