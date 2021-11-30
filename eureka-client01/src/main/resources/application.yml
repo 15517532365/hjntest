@@ -1,0 +1,13 @@
+server:
+  port: 18080
+spring:
+  application:
+    name: hjntest_client01
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:18180/eureka/
